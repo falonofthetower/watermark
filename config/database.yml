@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: iolite_dev
+  database: watermark-dev
   pool: 5
   username: falon
   password: 3141-5926-5359
@@ -9,7 +9,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: iolite_test
+  database: watermark-test
   pool: 5
   username: falon
   password: 3141-5926-5359
