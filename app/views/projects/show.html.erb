@@ -1,0 +1,63 @@
+<script type="text/javascript">
+var developerKey = "AIzaSyCPV5mM9y9KljCWqWrVWSI2pLI-AveYWk0"
+var clientId = "98412712800-9oljtd6so9udt7gtq9otdr26npllibu7"
+var accessToken;
+function onApiLoad() {
+  gapi.load('auth', authenticateWithGoogle);
+  gapi.load('picker');
+}
+function authenticateWithGoogle() {
+  window.gapi.auth.authorize({
+    'client_id': clientId,
+    'scope': ['https://www.googleapis.com/auth/drive.file']
+  }, handleAuthentication);
+}
+function handleAuthentication(result) {
+  if(result && !result.error) {
+    accessToken = result.access_token;
+    $('#choose_pdf').hide();
+    setupPicker();
+  }
+}
+function setupPicker() {
+  var picker = new google.picker.PickerBuilder()
+    .setOAuthToken(accessToken)
+    .setDeveloperKey(developerKey)
+    .setAppId('98412712800')
+    .addView(new google.picker.DocsUploadView())
+    .addView(new google.picker.DocsView())
+    .setCallback(pickerCallback)
+    .build();
+  picker.setVisible(true);
+}
+function pickerCallback(data) {
+  var url = 'nothing';
+  if (data.action == google.picker.Action.PICKED) {
+    var doc = data[google.picker.Response.DOCUMENTS][0];
+    var id = doc.id;
+    document.getElementById('pdf_file_id').value = id;
+    document.forms['new_pdf'].submit();
+  } else if (data.action == "cancel") {
+    $('#choose_pdf').show();
+
+    $("#choose_pdf").click(function() {
+      $('#choose_pdf').hide();
+      setupPicker();
+    });
+  }
+}
+$("#choose_pdf").click(function() {
+  $('#choose_pdf').hide();
+  setupPicker();
+});
+
+</script>
+<%= content_for(:body_attributes) do %>data-no-turbolink<% end %>
+<h2><%= @project.name %></h2>
+<button id="choose_pdf" class="btn btn-primary">Choose PDF</button>
+<%= bootstrap_form_for([@project, Pdf.new]) do |f| %>
+  <%= f.hidden_field :file_id %>
+  <%= f.hidden_field :project_id, value: @project.id %>
+  <%= f.submit "Add PDF", id: "add_pdf", style: "display: none" %>
+<% end %>
+<script src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>

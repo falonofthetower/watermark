@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://accounts.google.com/o/oauth2/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=refresh_token&refresh_token=1%2FwYvXIe8PclxROY5xQtDV7Gs18teAwpKwD7U1ue1ErVE&client_id=98412712800-9oljtd6so9udt7gtq9otdr26npllibu7&client_secret=Q6f7OftqPgMkQips40Fx2BW8
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Sun, 13 Mar 2016 19:52:33 GMT
+      Content-Disposition:
+      - attachment; filename="json.txt"; filename*=UTF-8''json.txt
+      Set-Cookie:
+      - NID=77=lY4lJ2cabx75wgM1zDhjTu9062V_TRs5yEtTyiOwO-kthGdMwiCs6RLVnNRhrgzOJzvKy9PwffTnGbeCOeqJKAN02D7G7hIM2xnf_IK3Ucf2MRPMoX2X0nJvV6DUnRIG;Domain=.google.com;Path=/;Expires=Mon,
+        12-Sep-2016 19:52:33 GMT;HttpOnly
+      P3p:
+      - CP="This is not a P3P policy! See https://support.google.com/accounts/answer/151657?hl=en
+        for more info."
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=1
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="31,30,29,28,27,26,25"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "access_token" : "ya29.pAIlEIClBfcZ71Bxd_KP8gMYniU5uO8FL143CdoNjxnaD7z7i3q7kVGfSHBvgw3gjW4",
+          "token_type" : "Bearer",
+          "expires_in" : 3600,
+          "id_token" : "eyJhbGciOiJSUzI1NiIsImtpZCI6IjYxNjJlNjgwOWQ2NGQwNzJiMTk5OWIzYWZkMjI2NThmYjQ3NjcwN2QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXRfaGFzaCI6ImFUNHVxWWxkd2lTVl9hVU96ZEtZcUEiLCJhdWQiOiI5ODQxMjcxMjgwMC05b2xqdGQ2c285dWR0N2d0cTlvdGRyMjZucGxsaWJ1Ny5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMTQzNDA2MTcyMjU2NDQwOTUzNSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhenAiOiI5ODQxMjcxMjgwMC05b2xqdGQ2c285dWR0N2d0cTlvdGRyMjZucGxsaWJ1Ny5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImVtYWlsIjoicGV0ZXJrYXJ0aC5kZXYudGVzdGluZ0BnbWFpbC5jb20iLCJpYXQiOjE0NTc4OTg3NTMsImV4cCI6MTQ1NzkwMjM1M30.Zki9XXI3vQ5OYDwMhbz93Tjx6NUYoE5Vaq2VqlRX6-vyGdNakCGi6Qe1ctPwsC4jjoZEel0I41p3cjBheH1YwZPlVBiSYkMIie7OuFSSZ4Ps3bGhgQf7SJbB1yz-_cphedbuCtui-ARTKoofYJhNyN92R7xr9pLi6qy64OaVByGiC-l5YTXCygIzG6_lMGyWi_l-O9SRBBkYj-_MCgJa2qnshEBcflK6v1TvDA7L3fdEw4IBjz0nZZ2eyIUqf7xXM3vNzITX41h-7hHv4aExYYsUL8fc5wmeiT5LR_cMP7cX8exhL_-WkX8RtStdkDNRGcVwfF6rcnoDl7-ykhEseQ"
+        }
+    http_version: 
+  recorded_at: Sun, 13 Mar 2016 19:52:33 GMT
+recorded_with: VCR 2.9.3

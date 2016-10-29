@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @project do |f| %>
+  <fieldset class="form-group">
+    <%= f.text_field :name, label: "name" %>
+    <%= f.submit class: "btn btn-primary" %>
+  </fieldset>
+<% end %>

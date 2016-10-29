@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: iolite_dev
+  pool: 5
+  username: falon
+  password: 3141-5926-5359
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: iolite_test
+  pool: 5
+  username: falon
+  password: 3141-5926-5359

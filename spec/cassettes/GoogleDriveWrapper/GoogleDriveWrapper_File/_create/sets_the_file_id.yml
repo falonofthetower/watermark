@@ -1,0 +1,198 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://accounts.google.com/o/oauth2/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=refresh_token&refresh_token=1%2FwYvXIe8PclxROY5xQtDV7Gs18teAwpKwD7U1ue1ErVE&client_id=98412712800-9oljtd6so9udt7gtq9otdr26npllibu7&client_secret=Q6f7OftqPgMkQips40Fx2BW8
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Mon, 07 Mar 2016 17:04:48 GMT
+      Content-Disposition:
+      - attachment; filename="json.txt"; filename*=UTF-8''json.txt
+      Set-Cookie:
+      - NID=77=pxIQK9WWE2KBfqUFDRrrXbNNwj-Vwj-3ZiMVDmxc-vCby8j5GvF2qahPKcI4xFEuWPLi-HQpswIpXdrhkSQnZZIwX8G-nWFaBHVjWI1VjB2EYDiag_EP0rde05ugYeD4;Domain=.google.com;Path=/;Expires=Tue,
+        06-Sep-2016 17:04:48 GMT;HttpOnly
+      P3p:
+      - CP="This is not a P3P policy! See https://support.google.com/accounts/answer/151657?hl=en
+        for more info."
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=1
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="30,29,28,27,26,25"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "access_token" : "ya29.ngJ11gO3sQhiQSWkU-7zP-99MqOocfAHgRUjaxlJzXFsjh5v0Q4jENFbXnBEWEstNdA",
+          "token_type" : "Bearer",
+          "expires_in" : 3600,
+          "id_token" : "eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1ZmYyYWM4ZjhhZDhiNTA1MzVlZjMyZjRmMWM4MDYxOWU0NjgyMTIifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXRfaGFzaCI6Ik00Qk44VEt6SzRmVHV3Wll2aVVuNGciLCJhdWQiOiI5ODQxMjcxMjgwMC05b2xqdGQ2c285dWR0N2d0cTlvdGRyMjZucGxsaWJ1Ny5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMTQzNDA2MTcyMjU2NDQwOTUzNSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhenAiOiI5ODQxMjcxMjgwMC05b2xqdGQ2c285dWR0N2d0cTlvdGRyMjZucGxsaWJ1Ny5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImVtYWlsIjoicGV0ZXJrYXJ0aC5kZXYudGVzdGluZ0BnbWFpbC5jb20iLCJpYXQiOjE0NTczNzAyODgsImV4cCI6MTQ1NzM3Mzg4OH0.NiM9pEYrwuPt-Hcv-QkK4iyBbhQQM80FY34GzS--SLBafZGuAxVXYvpAojezMy2QSmjwOpaXm7vhUbA-CRQaq5qTxeNomDFi6zx3UzbKDQX0rZABDFwkCAyDSrmENT_x9NpFFnyceBGkxYUPw2RczdybFJV_eYp4e5MMsAvBC-YMFOd69hq2PmtxFMKbURW7AbY1bxprrmShI8tjBIS6WNyov6zWQ-kCD6jQq_EIK1s_USSHsKkUdSHN1_-V7VWWAfRCoUYmqCabxPhHvgvpJtk0C4wGf-I5MVnxadK2vgw7UtPmW56Q2VqbHBoxJ03IhngP9SAUuiknqNymGIoCdw"
+        }
+    http_version: 
+  recorded_at: Mon, 07 Mar 2016 17:04:48 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/drive/v2/files
+    body:
+      encoding: UTF-8
+      string: '{"mimeType":"application/vnd.google-apps.folder","title":"Iolite_Base"}'
+    headers:
+      User-Agent:
+      - |-
+        unknown/0.0.0 google-api-ruby-client/0.9.pre3 Linux/3.19.0-51-generic
+         (gzip)
+      Authorization:
+      - Bearer ya29.ngJ11gO3sQhiQSWkU-7zP-99MqOocfAHgRUjaxlJzXFsjh5v0Q4jENFbXnBEWEstNdA
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '71'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Mon, 07 Mar 2016 17:04:50 GMT
+      Etag:
+      - '"c-g_a-1OtaH-kNQ4WBoXLp3Zv9s/MTQ1NzM3MDI4OTAyMA"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=1
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="30,29,28,27,26,25"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#file",
+         "id": "0B37u_eLqcexnTFc5bTREZ1lWU3M",
+         "etag": "\"c-g_a-1OtaH-kNQ4WBoXLp3Zv9s/MTQ1NzM3MDI4OTAyMA\"",
+         "selfLink": "https://www.googleapis.com/drive/v2/files/0B37u_eLqcexnTFc5bTREZ1lWU3M",
+         "alternateLink": "https://docs.google.com/folderview?id=0B37u_eLqcexnTFc5bTREZ1lWU3M&usp=drivesdk",
+         "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_collection_list_1.png",
+         "title": "Iolite_Base",
+         "mimeType": "application/vnd.google-apps.folder",
+         "labels": {
+          "starred": false,
+          "hidden": false,
+          "trashed": false,
+          "restricted": false,
+          "viewed": true
+         },
+         "createdDate": "2016-03-07T17:04:49.020Z",
+         "modifiedDate": "2016-03-07T17:04:49.020Z",
+         "modifiedByMeDate": "2016-03-07T17:04:49.020Z",
+         "lastViewedByMeDate": "2016-03-07T17:04:49.020Z",
+         "markedViewedByMeDate": "1970-01-01T00:00:00.000Z",
+         "version": "76",
+         "parents": [
+          {
+           "kind": "drive#parentReference",
+           "id": "0AH7u_eLqcexnUk9PVA",
+           "selfLink": "https://www.googleapis.com/drive/v2/files/0B37u_eLqcexnTFc5bTREZ1lWU3M/parents/0AH7u_eLqcexnUk9PVA",
+           "parentLink": "https://www.googleapis.com/drive/v2/files/0AH7u_eLqcexnUk9PVA",
+           "isRoot": true
+          }
+         ],
+         "userPermission": {
+          "kind": "drive#permission",
+          "etag": "\"c-g_a-1OtaH-kNQ4WBoXLp3Zv9s/tX-dFZFvASFQd84GmwpatYuSBAI\"",
+          "id": "me",
+          "selfLink": "https://www.googleapis.com/drive/v2/files/0B37u_eLqcexnTFc5bTREZ1lWU3M/permissions/me",
+          "role": "owner",
+          "type": "user"
+         },
+         "quotaBytesUsed": "0",
+         "ownerNames": [
+          "Peter Karth"
+         ],
+         "owners": [
+          {
+           "kind": "drive#user",
+           "displayName": "Peter Karth",
+           "isAuthenticatedUser": true,
+           "permissionId": "13737777834403275468",
+           "emailAddress": "peterkarth.dev.testing@gmail.com"
+          }
+         ],
+         "lastModifyingUserName": "Peter Karth",
+         "lastModifyingUser": {
+          "kind": "drive#user",
+          "displayName": "Peter Karth",
+          "isAuthenticatedUser": true,
+          "permissionId": "13737777834403275468",
+          "emailAddress": "peterkarth.dev.testing@gmail.com"
+         },
+         "editable": true,
+         "copyable": false,
+         "writersCanShare": true,
+         "shared": false,
+         "explicitlyTrashed": false,
+         "appDataContents": false,
+         "spaces": [
+          "drive"
+         ]
+        }
+    http_version: 
+  recorded_at: Mon, 07 Mar 2016 17:04:50 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,10 @@
+<%= Gon::Base.render_data %>
+<div id="job-id-container">
+  <div id="job_id">
+  </div>
+</div>
+<p>You now have <%= "#{@pdf.file_id}" %></p>
+<%= form_tag pdf_flatten_path, remote: true do %>
+  <%= hidden_field_tag :id, @pdf.id, id: 'id' %>
+  <%= submit_tag "Flatten Pdf" %>
+<% end %>

@@ -1,0 +1,9 @@
+= bootstrap_form_for(@user) do |f|
+  %header
+    %h1 Create Account
+  %fieldset
+    = f.email_field :email, label: "Email Address"
+    = f.password_field :password, label: "Password"
+    = f.submit "Sign Up", class: "btn btn-default"
+
+
