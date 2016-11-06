@@ -1,0 +1,21 @@
+machine:
+  ruby:
+    version: 2.1.5
+deployment:
+  production:
+    branch: master
+    commands:
+      - heroku maintenance:on --app watermarker
+      - heroku pg:backups capture --app watermarker
+      - git fetch origin --unshallow
+      - git push git@heroku.com:watermarker.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app watermarker
+      - heroku maintenance:off --app watermarker
+  staging:
+    branch: staging
+    commands:
+      - heroku maintenance:on --app watermarker-staging
+      - git fetch origin --unshallow
+      - git push git@heroku.com:watermarker-staging.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app watermarker-staging
+      - heroku maintenance:off --app watermarker-staging
