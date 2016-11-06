@@ -14,6 +14,6 @@ class RefreshIdPool < Driveable
 
   def fetch_ids
     request = ServiceWrapper.generate_file_ids(client, QUEUE_REFRESH_SIZE)
-    self.user.google_id_pool << request.ids
+    self.user.google_id_pool << request.response.ids
   end
 end

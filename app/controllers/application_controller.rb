@@ -29,6 +29,14 @@ class ApplicationController < ActionController::Base
     make_drive_accessible unless drive_accessible?
   end
 
+  def require_google_auth_user
+    if logged_in?
+      require_google_auth
+    else
+      require_user
+    end
+  end
+
   def drive_accessible?
     current_user and current_user.refresh_token
   end

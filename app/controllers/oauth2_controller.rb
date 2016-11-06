@@ -1,5 +1,5 @@
 class Oauth2Controller < ApplicationController
-  before_action :require_user
+  before_filter :require_user
 
   def redirect
     set_refresh_token

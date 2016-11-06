@@ -79,6 +79,15 @@ module DriveWrapper
       new(error_message: e.message)
     end
 
+    def self.list_files(client, max_results=100)
+      service.authorization = client
+      response = service.generate_file_ids(max_results: max_results)
+
+      new(response: response)
+    rescue Apis::Error => e
+      new(error_message: e.message)
+    end
+
     def successful?
       response.present?
     end

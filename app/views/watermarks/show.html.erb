@@ -1,0 +1,14 @@
+<div id="job-id-container">
+  <div id="job_id">
+  </div>
+</div>
+<div id="img">
+  <pre id="output"></pre>
+  <%= form_tag apply_watermark_path, remote: true do %>
+    <%= hidden_field_tag :id, @watermark.id, id: 'id' %>
+    <%= text_field_tag :text %>
+    <%= submit_tag "Apply Watermark" %>
+  <% end %>
+</div>
+
+<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>

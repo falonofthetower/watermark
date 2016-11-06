@@ -22,7 +22,7 @@ describe SessionsController do
       end
 
       it "redirects to the home page" do
-        expect(response).to redirect_to root_path
+        expect(response).to redirect_to new_watermark_path
       end
 
       it "sets the user in the setting" do

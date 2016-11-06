@@ -1,5 +1,6 @@
 require 'sidekiq'
 require 'sidekiq-status'
+require 'sidekiq/testing/inline'
 
 Sidekiq.configure_client do |config|
   config.client_middleware do |chain|

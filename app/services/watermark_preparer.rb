@@ -1,0 +1,2 @@
+class WatermarkPreparer < Preparer
+end

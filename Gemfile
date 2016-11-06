@@ -33,6 +33,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
+  gem 'launchy'
   gem 'zeus', '0.15.4'
   gem 'guard-zeus'
   gem 'fuubar'

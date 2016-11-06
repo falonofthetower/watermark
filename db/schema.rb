@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412013726) do
+ActiveRecord::Schema.define(version: 20161105171915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,10 +55,13 @@ ActiveRecord::Schema.define(version: 20160412013726) do
   create_table "sidekiq_jobs", force: :cascade do |t|
     t.string   "job_id"
     t.integer  "user_id"
-    t.integer  "pdf_id"
+    t.integer  "driveable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "driveable_type"
   end
+
+  add_index "sidekiq_jobs", ["driveable_id", "driveable_type"], name: "index_sidekiq_jobs_on_driveable_id_and_driveable_type", using: :btree
 
   create_table "user_projects", force: :cascade do |t|
     t.integer  "user_id"
@@ -75,4 +78,13 @@ ActiveRecord::Schema.define(version: 20160412013726) do
     t.string "google_drive_id"
   end
 
+  create_table "watermarks", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "google_id"
+    t.string  "text"
+    t.string  "google_drive_id"
+    t.string  "title"
+  end
+
+  add_foreign_key "watermarks", "users"
 end

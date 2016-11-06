@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome to Iolite"
-      redirect_to root_path
+      redirect_to new_watermark_path
     else
       flash[:danger] = "Your sign in failed!"
       redirect_to sign_in_path
