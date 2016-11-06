@@ -9,6 +9,10 @@ class Preparer
     @file_id ||= user.new_drive_id
   end
 
+  def title
+    subject.title
+  end
+
   def user
     subject.user
   end
