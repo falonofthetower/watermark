@@ -23,6 +23,7 @@ describe FileCreation do
     let(:object_preparer) { double("ObjectPreparer") }
 
     before do
+      file_inserter = class_double("FileInserter").as_stubbed_const(:transfer_nested_constants => true)
       stub_const("ObjectPreparer", object_preparer)
       allow(ObjectPreparer).to receive(:new).with(object).and_return(object_preparer)
       allow(ObjectPreparer).to receive_messages(
@@ -33,6 +34,7 @@ describe FileCreation do
         parents: [],
         mime_type: "mimey wimey"
       )
+      expect(file_inserter).to receive(:perform_async)
       FileCreation.new(object).create
     end
 
@@ -58,10 +60,6 @@ describe FileCreation do
 
     it "sets the file_id" do
       expect(FileCommand.last.file_id).to eq("file_id")
-    end
-
-    it "dispatches a file insertion" do
-      expect(FileInserter.jobs.size).to eq(1)
     end
 
     it "updates the drive_id for the subject" do
