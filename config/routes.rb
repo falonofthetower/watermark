@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   # post '/sign_in', to: 'sessions#create', as: 'sessions'
   post 'apply_watermark', to: 'watermarker#apply', as: 'apply_watermark'
-  get 'progress/:job_id', to: 'pdf_flatten#percentage_done'
+  get 'progress/:job_id', to: 'watermarker#percentage_done'
 
   resources :users, only: [:new, :create]
   resources :watermarks, only: [:new, :create, :show, :index]
