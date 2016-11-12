@@ -1,15 +1,15 @@
 require 'spec_helper'
 
-describe WatermarksController do
+describe ImagesController do
   describe "GET new" do
     it_behaves_like "requires google auth" do
       let(:action) { get :new }
     end
 
-    it "sets @watermark" do
+    it "sets @image" do
       set_current_google_user
       get :new
-      expect(assigns(:watermark)).to be_instance_of(Watermark)
+      expect(assigns(:image)).to be_instance_of(Image)
     end
   end
 end
