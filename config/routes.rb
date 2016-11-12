@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # root to: 'sessions#new'
-  root to: 'watermarks#new'
+  root to: 'images#new'
   # get 'auth/google_oauth2/callback', to: 'oauth2#redirect'
   get 'auth/google_oauth2/callback', to: 'sessions#create', as: :sign_in
   get '/sign_out', to: 'sessions#destroy', as: 'sign_out'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'progress/:job_id', to: 'watermarker#percentage_done'
 
   resources :users, only: [:new, :create]
-  resources :watermarks, only: [:new, :create, :show, :index]
+  resources :images, only: [:new, :create, :show, :index]
   resources :projects, only: [:new, :create, :index, :show] do
     resources :pdfs, only: [:create]
   end

@@ -64,11 +64,6 @@ function handleAuthResult(authResult) {
  * Load Drive API client library.
  */
 function loadDriveApi() {
-  var myName = arguments.callee.toString();
-  myName = myName.substr('function '.length);
-  myName = myName.substr(0, myName.indexOf('('));
-
-  console.log(myName);
   gapi.client.load('drive', 'v2', listFiles);
 }
 
@@ -76,30 +71,19 @@ function loadDriveApi() {
  * Print files.
  */
 function listFiles() {
-  var myName = arguments.callee.toString();
-  myName = myName.substr('function '.length);
-  myName = myName.substr(0, myName.indexOf('('));
-
-  console.log(myName);
-  var fileId = gon.google_id
+  var fileId = gon.google_id;
   var request = gapi.client.drive.files.get({
     'fileId': fileId
   });
-  var touch = gapi.client.drive.files.touch({
-    'fileId': fileId
-  });
-  debugger;
-  touch.execute(function(resp) { });
 
+  var image = "";
   request.execute(function(resp) {
     console.log('Title: ' + resp.title);
     console.log('Description: ' + resp.description);
     console.log('MIME type: ' + resp.mimeType);
-    console.log('MIME type: ' + resp.thumbnailLink);
-    var img = new Image();
-    var div = document.getElementById('output');
-    div.appendChild(img);
-    img.src = resp.thumbnailLink;
+    console.log('Thumbnaillink: ' + resp.thumbnailLink);
+    var image = '<img src="' + resp.thumbnailLink + '" />';
+    $('#output').prepend(image);
   });
   // var request = gapi.client.drive.files.list({
   //     'pageSize': 10,

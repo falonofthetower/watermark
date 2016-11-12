@@ -6,7 +6,7 @@ class Preparer
   end
 
   def file_id
-    @file_id ||= user.new_drive_id
+    @file_id ||= subject.google_id
   end
 
   def title
