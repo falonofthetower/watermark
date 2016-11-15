@@ -5,7 +5,7 @@ http_interactions:
     uri: https://accounts.google.com/o/oauth2/token
     body:
       encoding: ASCII-8BIT
-      string: grant_type=refresh_token&refresh_token=1%2FwYvXIe8PclxROY5xQtDV7Gs18teAwpKwD7U1ue1ErVE&client_id=98412712800-9oljtd6so9udt7gtq9otdr26npllibu7&client_secret=Q6f7OftqPgMkQips40Fx2BW8
+      string: grant_type=refresh_token&refresh_token=<ENCODED_REFRESH_TOKEN>&client_id=<CLIENT_ID>&client_secret=<GOOGLE_CLIENT_SECRET>
     headers:
       User-Agent:
       - Faraday v0.9.2
@@ -29,38 +29,30 @@ http_interactions:
       Pragma:
       - no-cache
       Expires:
-      - Fri, 01 Jan 1990 00:00:00 GMT
+      - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Mon, 11 Apr 2016 20:17:57 GMT
+      - Tue, 15 Nov 2016 21:59:04 GMT
       Content-Disposition:
       - attachment; filename="json.txt"; filename*=UTF-8''json.txt
-      Set-Cookie:
-      - NID=78=Ii4rdZD1wPS3Qro6BunJC5loMX4wctq9HOACWiuECNuntW6IwZm-sN2uVwRSWf8FDy1ElWYAZ6tdiB33y1pcDsDu5maop8c8nT1yaPrjugqy36uX0Hh1hXKbZIMprNnU;Domain=.google.com;Path=/;Expires=Tue,
-        11-Oct-2016 20:17:57 GMT;HttpOnly
-      P3p:
-      - CP="This is not a P3P policy! See https://support.google.com/accounts/answer/151657?hl=en
-        for more info."
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       Server:
       - GSE
-      Alternate-Protocol:
-      - 443:quic
       Alt-Svc:
-      - quic=":443"; ma=2592000; v="32,31,30,29,28,27,26,25"
+      - quic=":443"; ma=2592000; v="36,35,34"
       Transfer-Encoding:
       - chunked
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: |-
         {
-          "access_token" : "ya29..wQIrGGO491OV1RyQBI8ATv9XFWM8Sa4nM-69WCAB8OGAFijP0qYUEejOvQmaUa5jhEJ_",
-          "token_type" : "Bearer",
+          "access_token" : "ya29.Ci-XA0vJFq_d8YfF6Se1hstsaw96zm9bGSdwUoT42eF-dbjZ8OBJmXtk2aeC0oAj5A",
           "expires_in" : 3600,
-          "id_token" : "eyJhbGciOiJSUzI1NiIsImtpZCI6ImJkYjcxNDljZTMwMThhMTdhMjI1ZGIwYWJjNDkzOWJlYTUwNTczYjIifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXRfaGFzaCI6IkNwQW1VZmVLaVdRVGFnbFhXVjZwVUEiLCJhdWQiOiI5ODQxMjcxMjgwMC05b2xqdGQ2c285dWR0N2d0cTlvdGRyMjZucGxsaWJ1Ny5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMTQzNDA2MTcyMjU2NDQwOTUzNSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhenAiOiI5ODQxMjcxMjgwMC05b2xqdGQ2c285dWR0N2d0cTlvdGRyMjZucGxsaWJ1Ny5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImVtYWlsIjoicGV0ZXJrYXJ0aC5kZXYudGVzdGluZ0BnbWFpbC5jb20iLCJpYXQiOjE0NjA0MDU4NzcsImV4cCI6MTQ2MDQwOTQ3N30.dclmAB_6tJSiGp5jolHGiaq67eafwR3r08Oxpyt1pkZ8bva74Uwcfn1rxGtT5T8Pr_9PFlmKlPnU6do_TVqriKgBJDIo8FTXdBRYJkc81qn0rzGzp4aoE6oXj0IE52ztsHAaIboXQ2M2zh3qaKK2pvTWu5GEWwOkYsJ9vd1XSDV3d7r0QyKvx41gp9Jb8rdwtquWJ0s3LI7bQFj8aRuE3ceu_qD1TMmbZLJQhkFBVQdWSKrPK49rz8caMT0JsAjnGurwxDGvD2r-tQV9vsGwFzRaAF_baNEwFwnaDVGm7OIrMu82G8d60M6IA99PN1ZD1c-yXJFGqyFJCIYJR_YIxQ"
+          "id_token" : "eyJhbGciOiJSUzI1NiIsImtpZCI6IjcwZjhjOGMyYjA1MDIyNmIwOWI1YTQ5Zjk2MDRiMmM0MjBhM2YyM2EifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiaWF0IjoxNDc5MjQ3MTQ0LCJleHAiOjE0NzkyNTA3NDQsImF0X2hhc2giOiI5aUdNVHY3V3h6UHFJVkVLaDJ5SkFnIiwiYXVkIjoiNDk0MTAxNjIyMjE5LWwxaGRwaDdyY2ppaTJrYmxibGRtMTA3dTd0bGpubWUxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTExNDM0MDYxNzIyNTY0NDA5NTM1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjQ5NDEwMTYyMjIxOS1sMWhkcGg3cmNqaWkya2JsYmxkbTEwN3U3dGxqbm1lMS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImVtYWlsIjoicGV0ZXJrYXJ0aC5kZXYudGVzdGluZ0BnbWFpbC5jb20ifQ.l_TRvTCyiI9ucPkmD5FKBfNUyzwkB2WLcsw3PQguu1EazM9NwHHCNM8kpczclqL8eOsb46KrhMD5dwx8mrps5PzQWlQAP99aN9BigOXxM1RDf0N4YkV8zBQrf6PZjldxu6eAeabqZ8H5ven2CoTEwwVDPBSpETWx3zm6pT6l1zcVWRn7VWY6K_oTX59mZGXa1r29HfLkc-b3V3bqCT6Nb4XdD1Xg1SR3Ph5J4lTNGMessPWGOrHCak6iU4EjqHLZxwsLzmlqxyTfimA_W95kTqv-9OhFTUIVGrA4_f3N-Xj7nXxs5rTrQKu1vLijHiHe51Sq2rWePBn2Cfx_ursKLg",
+          "token_type" : "Bearer"
         }
     http_version: 
-  recorded_at: Mon, 11 Apr 2016 20:17:57 GMT
+  recorded_at: Tue, 15 Nov 2016 21:59:04 GMT
 recorded_with: VCR 2.9.3

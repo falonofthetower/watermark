@@ -2,86 +2,267 @@
 http_interactions:
 - request:
     method: post
-    uri: https://accounts.google.com/o/oauth2/token
+    uri: https://www.googleapis.com/upload/drive/v2/files?upload_id=AEnB2UpTqVTIGLzzw_S_VHT37tb_MEvCtYc8GoVJrt_MheRWpfoo8QYJncepZeEJHfdYnL9uW_njpjXR8rgugq_UKfve7J2a2ja2PfXRF7p12mlFLzpwBzs&upload_protocol=resumable
     body:
-      encoding: ASCII-8BIT
-      string: grant_type=refresh_token&refresh_token=1%2FwYvXIe8PclxROY5xQtDV7Gs18teAwpKwD7U1ue1ErVE&client_id=98412712800-9oljtd6so9udt7gtq9otdr26npllibu7&client_secret=Q6f7OftqPgMkQips40Fx2BW8
+      encoding: UTF-8
+      string: ''
     headers:
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - |-
+        unknown/0.0.0 google-api-ruby-client/0.9 Linux/3.19.0-56-generic
+         (gzip)
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Tue, 15 Nov 2016 21:37:58 GMT
+      Authorization:
+      - Bearer ya29.Ci-XA67xZSXzzqtxMh37pPP_8I3nsOP-oVjftWiqWy_oPWydOAsFvlK-eMUgwqsuBQ
+      Content-Type:
+      - application/json
+      X-Goog-Upload-Command:
+      - upload, finalize
+      X-Goog-Upload-Offset:
+      - '0'
+      Content-Length:
+      - '0'
   response:
     status:
       code: 200
       message: OK
     headers:
+      X-Guploader-Uploadid:
+      - AEnB2UpTqVTIGLzzw_S_VHT37tb_MEvCtYc8GoVJrt_MheRWpfoo8QYJncepZeEJHfdYnL9uW_njpjXR8rgugq_UKfve7J2a2ja2PfXRF7p12mlFLzpwBzs
+      X-Goog-Upload-Status:
+      - final
+      Etag:
+      - '"41zBgiQeVtkERrlow_o1l3GDE3o/MTQ3OTI0NTg3ODU5Mw"'
+      Vary:
+      - Origin
+      - X-Origin
       Content-Type:
-      - application/json; charset=utf-8
-      X-Content-Type-Options:
-      - nosniff
+      - application/json; charset=UTF-8
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
-      - Fri, 01 Jan 1990 00:00:00 GMT
+      - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Thu, 17 Mar 2016 04:48:59 GMT
-      Content-Disposition:
-      - attachment; filename="json.txt"; filename*=UTF-8''json.txt
-      Set-Cookie:
-      - NID=77=caY7DDA9efPKyZcoMlXWKCowO3v93686RrX86L7MwLPmaUPavVoM2PydOWibeCUgEmSk89KtcSCGVL4zszQrPPVikkhQubfS5udeSKB6cEWwrgMLMiTipnTWuxXLe63r;Domain=.google.com;Path=/;Expires=Fri,
-        16-Sep-2016 04:48:59 GMT;HttpOnly
-      P3p:
-      - CP="This is not a P3P policy! See https://support.google.com/accounts/answer/151657?hl=en
-        for more info."
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
+      - Tue, 15 Nov 2016 21:37:58 GMT
+      Content-Length:
+      - '2661'
       Server:
-      - GSE
-      Alternate-Protocol:
-      - 443:quic,p=1
+      - UploadServer
       Alt-Svc:
-      - quic=":443"; ma=2592000; v="31,30,29,28,27,26,25"
-      Transfer-Encoding:
-      - chunked
+      - quic=":443"; ma=2592000; v="36,35,34"
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "access_token" : "ya29.qAJLIBY0KnIxSU763mPUkBQPSHkLs_0Xmg9s2SxT0Yv-ExyH-8zc99YvBD5GlDuwfrI",
-          "token_type" : "Bearer",
-          "expires_in" : 3600,
-          "id_token" : "eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4ZjljN2MwMDhjZGEwNWJmYWJhNDMzYjZhMWVhN2NkNGZjNTg4ZjcifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXRfaGFzaCI6IndmUFpTNHhYWmdrMEZBaEprVUE2V1EiLCJhdWQiOiI5ODQxMjcxMjgwMC05b2xqdGQ2c285dWR0N2d0cTlvdGRyMjZucGxsaWJ1Ny5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMTQzNDA2MTcyMjU2NDQwOTUzNSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhenAiOiI5ODQxMjcxMjgwMC05b2xqdGQ2c285dWR0N2d0cTlvdGRyMjZucGxsaWJ1Ny5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImVtYWlsIjoicGV0ZXJrYXJ0aC5kZXYudGVzdGluZ0BnbWFpbC5jb20iLCJpYXQiOjE0NTgxOTAxMzksImV4cCI6MTQ1ODE5MzczOX0.hGOKEi1OpVFTdnHsxr568XGHcdggS1JVyTU-KT_kqOK0qY9mDVtLq_MUiUPJE3z4qFqki3XWcfttJkAn474KlLH6BPXBG2V-pKJt0rKa4daaTKScs5-BALbU-UzB_LfdVcxFdxeRDU_kZlk8CEmSKPV3k1K31HDMql6VY6MrTqm7P7syKkDr9WfEuMGB7MffMD0NEONmpNrLA0ffckeuOpLvElO29LXj6AfITXAWz4KLrOooyyEe57KKnK-5t89mE00McU5yonS4olqAUqa0zglLnYNm0VE5e-fpvkTrPX4GmuqmXT6OQj79qYNgGIjx_mmTGO6lPPRdhtnm6LvcwQ"
-        }
+      string: ''
     http_version: 
-  recorded_at: Thu, 17 Mar 2016 04:48:59 GMT
+  recorded_at: Tue, 15 Nov 2016 21:37:58 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/upload/drive/v2/files?upload_id=AEnB2UqSW4pd6-_1XxGOoi4pG1dsam9G5Te3sA314oLKgCglx2idkeYFefmQ3ilB_SRPudRDR7sMepzPGE9NtxbCUFdURQd5mg&upload_protocol=resumable
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        unknown/0.0.0 google-api-ruby-client/0.9 Linux/3.19.0-56-generic
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Tue, 15 Nov 2016 21:41:07 GMT
+      Authorization:
+      - Bearer ya29.Ci-XAwBDI_fZ8s2mgN6LoujrweemjOZQzdxg6X7TpwRWkfU3v2LbyC6S9CUrSgNkig
+      Content-Type:
+      - application/json
+      X-Goog-Upload-Command:
+      - upload, finalize
+      X-Goog-Upload-Offset:
+      - '0'
+      Content-Length:
+      - '0'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Guploader-Uploadid:
+      - AEnB2UqSW4pd6-_1XxGOoi4pG1dsam9G5Te3sA314oLKgCglx2idkeYFefmQ3ilB_SRPudRDR7sMepzPGE9NtxbCUFdURQd5mg
+      X-Goog-Upload-Status:
+      - final
+      Etag:
+      - '"41zBgiQeVtkERrlow_o1l3GDE3o/MTQ3OTI0NjA2ODI0NQ"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Tue, 15 Nov 2016 21:41:08 GMT
+      Content-Length:
+      - '2661'
+      Server:
+      - UploadServer
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="36,35,34"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 15 Nov 2016 21:41:08 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/upload/drive/v2/files?upload_id=AEnB2UpLmQ4u6gs_5qkYf8_ZVAlVFYDzuMaXuJacOCVI4fldXKGKO707teCcptcu47DvNWxlYwLPObjMMxvOnE6csbywYphx5g&upload_protocol=resumable
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        unknown/0.0.0 google-api-ruby-client/0.9 Linux/3.19.0-56-generic
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Tue, 15 Nov 2016 21:42:11 GMT
+      Authorization:
+      - Bearer ya29.Ci-XA5rYvTr8SsY8mE-aA4mL2IJlz0enZSkQxq2pScrht-8ufxlCmDlvvKMNBl3adA
+      Content-Type:
+      - application/json
+      X-Goog-Upload-Command:
+      - upload, finalize
+      X-Goog-Upload-Offset:
+      - '0'
+      Content-Length:
+      - '0'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Guploader-Uploadid:
+      - AEnB2UpLmQ4u6gs_5qkYf8_ZVAlVFYDzuMaXuJacOCVI4fldXKGKO707teCcptcu47DvNWxlYwLPObjMMxvOnE6csbywYphx5g
+      X-Goog-Upload-Status:
+      - final
+      Etag:
+      - '"41zBgiQeVtkERrlow_o1l3GDE3o/MTQ3OTI0NjEzMTU4OA"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Tue, 15 Nov 2016 21:42:11 GMT
+      Content-Length:
+      - '2661'
+      Server:
+      - UploadServer
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="36,35,34"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 15 Nov 2016 21:42:11 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/upload/drive/v2/files?upload_id=AEnB2UqncIth4oQk3WBNqi92pK_9CA5xAk3uuO582-jjmhDLgPYch5q6W5weCv5_IzPEGjkQdHNDiLWuSaJruv0WPLEuuQeXnQ&upload_protocol=resumable
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        unknown/0.0.0 google-api-ruby-client/0.9 Linux/3.19.0-56-generic
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Tue, 15 Nov 2016 21:44:39 GMT
+      Authorization:
+      - Bearer ya29.Ci-XAwsz-3poE40N-QRfGaKRbTEop0-EfcKJvKyFi8hzFfN25S7od0ynMiZ5NUEudg
+      Content-Type:
+      - application/json
+      X-Goog-Upload-Command:
+      - upload, finalize
+      X-Goog-Upload-Offset:
+      - '0'
+      Content-Length:
+      - '0'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Guploader-Uploadid:
+      - AEnB2UqncIth4oQk3WBNqi92pK_9CA5xAk3uuO582-jjmhDLgPYch5q6W5weCv5_IzPEGjkQdHNDiLWuSaJruv0WPLEuuQeXnQ
+      X-Goog-Upload-Status:
+      - final
+      Etag:
+      - '"41zBgiQeVtkERrlow_o1l3GDE3o/MTQ3OTI0NjI3OTUwMg"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Tue, 15 Nov 2016 21:44:40 GMT
+      Content-Length:
+      - '2661'
+      Server:
+      - UploadServer
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="36,35,34"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 15 Nov 2016 21:44:40 GMT
 - request:
     method: post
     uri: https://accounts.google.com/o/oauth2/token
     body:
       encoding: ASCII-8BIT
-      string: grant_type=refresh_token&refresh_token=1%2FwYvXIe8PclxROY5xQtDV7Gs18teAwpKwD7U1ue1ErVE&client_id=98412712800-9oljtd6so9udt7gtq9otdr26npllibu7&client_secret=Q6f7OftqPgMkQips40Fx2BW8
+      string: grant_type=refresh_token&refresh_token=<ENCODED_REFRESH_TOKEN>&client_id=<CLIENT_ID>&client_secret=<GOOGLE_CLIENT_SECRET>
     headers:
-      Cache-Control:
-      - no-store
+      User-Agent:
+      - Faraday v0.9.2
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
@@ -96,53 +277,51 @@ http_interactions:
       Pragma:
       - no-cache
       Expires:
-      - Fri, 01 Jan 1990 00:00:00 GMT
+      - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Thu, 17 Mar 2016 04:48:59 GMT
+      - Tue, 15 Nov 2016 21:59:08 GMT
       Content-Disposition:
       - attachment; filename="json.txt"; filename*=UTF-8''json.txt
-      Set-Cookie:
-      - NID=77=fJj0NWQ3tsNk4cz5X5X01ZImL9jbeq32J3au_GT24c31z-sYWeoPaPysFRanIUGGCMWihneVKLmgJWrXnq0mmC6z18-P5gY2s5JZsXa_3zDTvSVkurkyL9oIjbWHZDgw;Domain=.google.com;Path=/;Expires=Fri,
-        16-Sep-2016 04:48:59 GMT;HttpOnly
-      P3p:
-      - CP="This is not a P3P policy! See https://support.google.com/accounts/answer/151657?hl=en
-        for more info."
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       Server:
       - GSE
-      Alternate-Protocol:
-      - 443:quic,p=1
       Alt-Svc:
-      - quic=":443"; ma=2592000; v="31,30,29,28,27,26,25"
+      - quic=":443"; ma=2592000; v="36,35,34"
       Transfer-Encoding:
       - chunked
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: |-
         {
-          "access_token" : "ya29.qAJLIBY0KnIxSU763mPUkBQPSHkLs_0Xmg9s2SxT0Yv-ExyH-8zc99YvBD5GlDuwfrI",
-          "token_type" : "Bearer",
+          "access_token" : "ya29.Ci-XA_FNc5dIWRAqKfmZ1vK7KWY-upRGy9ycFIhJGstwIlr21wtGWqw91akDVIh4kA",
           "expires_in" : 3600,
-          "id_token" : "eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4ZjljN2MwMDhjZGEwNWJmYWJhNDMzYjZhMWVhN2NkNGZjNTg4ZjcifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXRfaGFzaCI6IndmUFpTNHhYWmdrMEZBaEprVUE2V1EiLCJhdWQiOiI5ODQxMjcxMjgwMC05b2xqdGQ2c285dWR0N2d0cTlvdGRyMjZucGxsaWJ1Ny5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMTQzNDA2MTcyMjU2NDQwOTUzNSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhenAiOiI5ODQxMjcxMjgwMC05b2xqdGQ2c285dWR0N2d0cTlvdGRyMjZucGxsaWJ1Ny5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImVtYWlsIjoicGV0ZXJrYXJ0aC5kZXYudGVzdGluZ0BnbWFpbC5jb20iLCJpYXQiOjE0NTgxOTAxMzksImV4cCI6MTQ1ODE5MzczOX0.hGOKEi1OpVFTdnHsxr568XGHcdggS1JVyTU-KT_kqOK0qY9mDVtLq_MUiUPJE3z4qFqki3XWcfttJkAn474KlLH6BPXBG2V-pKJt0rKa4daaTKScs5-BALbU-UzB_LfdVcxFdxeRDU_kZlk8CEmSKPV3k1K31HDMql6VY6MrTqm7P7syKkDr9WfEuMGB7MffMD0NEONmpNrLA0ffckeuOpLvElO29LXj6AfITXAWz4KLrOooyyEe57KKnK-5t89mE00McU5yonS4olqAUqa0zglLnYNm0VE5e-fpvkTrPX4GmuqmXT6OQj79qYNgGIjx_mmTGO6lPPRdhtnm6LvcwQ"
+          "id_token" : "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRhOWUzZDdjZGQxYjQxNzgwMTBmODlhZjExY2ZkMzc0MDAwNjFhZmMifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiaWF0IjoxNDc5MjQ3MTQ4LCJleHAiOjE0NzkyNTA3NDgsImF0X2hhc2giOiJpX09QNlR2MGE2UW13YWM0N0NnOHp3IiwiYXVkIjoiNDk0MTAxNjIyMjE5LWwxaGRwaDdyY2ppaTJrYmxibGRtMTA3dTd0bGpubWUxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTExNDM0MDYxNzIyNTY0NDA5NTM1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjQ5NDEwMTYyMjIxOS1sMWhkcGg3cmNqaWkya2JsYmxkbTEwN3U3dGxqbm1lMS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImVtYWlsIjoicGV0ZXJrYXJ0aC5kZXYudGVzdGluZ0BnbWFpbC5jb20ifQ.pIrYj__xCeEWzDcsqupjeHmcQyGJWk2QNd_aPV32KhHzbkyWxAlesY1ixhR9ppR4-53WvYQlo3Czjg4Y3bHNwag45ROPanBCpu8znza-rGBkotwYpft770VE21pYvgfEW9HdlpOjg9F0MPxKj2CtdtqxyP8i26xcUGv-yVu_cTn0DcmQkT7XNnMloFMUlj1VNIUiSWbpVAHn9OxB7U1_82xwpDVGvr9M5jE5sHMr31P4bDGZJ6Bslhg9uZ_0n93B2w-SYDZ1hMCtNoZY-G56QVgmhWRLD-R4NFOZXiyf2Kx0LSuz7AEIh0ZURU421zhhqUgdtNDnBkDbteAhyrIaVw",
+          "token_type" : "Bearer"
         }
     http_version: 
-  recorded_at: Thu, 17 Mar 2016 04:49:00 GMT
+  recorded_at: Tue, 15 Nov 2016 21:59:08 GMT
 - request:
     method: post
     uri: https://www.googleapis.com/upload/drive/v2/files
     body:
       encoding: UTF-8
-      string: '{"parents":[]}'
+      string: '{"id":"","parents":[],"title":"Fake Title"}'
     headers:
       User-Agent:
       - |-
-        unknown/0.0.0 google-api-ruby-client/0.9.pre3 Linux/3.19.0-51-generic
+        unknown/0.0.0 google-api-ruby-client/0.9 Linux/3.19.0-56-generic
          (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Tue, 15 Nov 2016 21:59:08 GMT
       Authorization:
-      - Bearer ya29.qAJLIBY0KnIxSU763mPUkBQPSHkLs_0Xmg9s2SxT0Yv-ExyH-8zc99YvBD5GlDuwfrI
+      - Bearer ya29.Ci-XA_FNc5dIWRAqKfmZ1vK7KWY-upRGy9ycFIhJGstwIlr21wtGWqw91akDVIh4kA
       Content-Type:
       - application/json
       X-Goog-Upload-Protocol:
@@ -154,73 +333,73 @@ http_interactions:
       X-Goog-Upload-Header-Content-Type:
       - application/text
       Content-Length:
-      - '14'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - '43'
   response:
     status:
       code: 200
       message: OK
     headers:
       X-Guploader-Uploadid:
-      - AEnB2UojakFb0LdF2Ss7ccGdrzI0OOX4l5PdGXb3qlAIhgPkCyzu9KqG5hLoukvH8gTN6EvogDMrCcfScJAFLmUvGJBE1eKnwg
+      - AEnB2UoPvyIC2Vp5oGXay8v_XnBc_YIi-xSLXeAPurKk-E6jb4ozCN-5xHM5Ew-NCWe-cDACo8Fu-uzIgcuj97UJXon2id_5Gw
       X-Goog-Upload-Status:
       - active
       X-Goog-Upload-Url:
-      - https://www.googleapis.com/upload/drive/v2/files?upload_id=AEnB2UojakFb0LdF2Ss7ccGdrzI0OOX4l5PdGXb3qlAIhgPkCyzu9KqG5hLoukvH8gTN6EvogDMrCcfScJAFLmUvGJBE1eKnwg&upload_protocol=resumable
+      - https://www.googleapis.com/upload/drive/v2/files?upload_id=AEnB2UoPvyIC2Vp5oGXay8v_XnBc_YIi-xSLXeAPurKk-E6jb4ozCN-5xHM5Ew-NCWe-cDACo8Fu-uzIgcuj97UJXon2id_5Gw&upload_protocol=resumable
       X-Goog-Upload-Control-Url:
-      - https://www.googleapis.com/upload/drive/v2/files?upload_id=AEnB2UojakFb0LdF2Ss7ccGdrzI0OOX4l5PdGXb3qlAIhgPkCyzu9KqG5hLoukvH8gTN6EvogDMrCcfScJAFLmUvGJBE1eKnwg&upload_protocol=resumable
+      - https://www.googleapis.com/upload/drive/v2/files?upload_id=AEnB2UoPvyIC2Vp5oGXay8v_XnBc_YIi-xSLXeAPurKk-E6jb4ozCN-5xHM5Ew-NCWe-cDACo8Fu-uzIgcuj97UJXon2id_5Gw&upload_protocol=resumable
       X-Goog-Upload-Chunk-Granularity:
       - '262144'
       X-Goog-Upload-Header-Etag:
-      - '"c-g_a-1OtaH-kNQ4WBoXLp3Zv9s/GlHbBFDt284X6eEw1J1Fe2ngpC0"'
+      - '"41zBgiQeVtkERrlow_o1l3GDE3o/Zl6k3BhfJxRF5XoxhNV-ktqPg_4"'
       X-Goog-Upload-Header-Vary:
       - Origin
       - X-Origin
       X-Goog-Upload-Header-X-Google-Backends:
-      - qkaw139:4693
+      - qkdr188:4813
       X-Goog-Upload-Header-X-Google-Session-Info:
-      - CNnQovTQAhoCGAYwADpuCg9kcml2ZS1yb3N5LXByb2QSBWRyaXZlGOCm687uAiJHOTg0MTI3MTI4MDAtOW9sanRkNnNvOXVkdDdndHE5b3RkcjI2bnBsbGlidTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20w7w4w8Q5KWxJIeWEyOS5xQUpMSUJZMEtuSXhTVTc2M21QVWtCUVBTSGtMc18wWG1nOXMyU3hUMFl2LUV4eUgtOHpjOTlZdkJENUdsRHV3ZnJJMAQ6DTEvd1l2WEllOFBjbH4
+      - CNnQovTQAhoCGAYwADpyCg9kcml2ZS1yb3N5LXByb2QSBWRyaXZlGMvbgdawDiJINDk0MTAxNjIyMjE5LWwxaGRwaDdyY2ppaTJrYmxibGRtMTA3dTd0bGpubWUxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tMPEOMPgOMO8OSloSR3lhMjkuQ2ktWEFfRk5jNWRJV1JBcUtmbVoxdks3S1dZLXVwUkd5OXljRkloSkdzdHdJbHIyMXd0R1dxdzkxYWtEVkloNGtBMAQ6DTEvMFlId3FlUnRhRH4
       X-Goog-Upload-Header-Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       X-Goog-Upload-Header-Pragma:
       - no-cache
       X-Goog-Upload-Header-Expires:
-      - Fri, 01 Jan 1990 00:00:00 GMT
+      - Mon, 01 Jan 1990 00:00:00 GMT
       X-Goog-Upload-Header-Date:
-      - Thu, 17 Mar 2016 04:49:00 GMT
+      - Tue, 15 Nov 2016 21:59:09 GMT
       Content-Length:
       - '0'
       Date:
-      - Thu, 17 Mar 2016 04:49:00 GMT
+      - Tue, 15 Nov 2016 21:59:09 GMT
       Server:
       - UploadServer
       Content-Type:
       - text/html; charset=UTF-8
-      Alternate-Protocol:
-      - 443:quic,p=1
       Alt-Svc:
-      - quic=":443"; ma=2592000; v="31,30,29,28,27,26,25"
+      - quic=":443"; ma=2592000; v="36,35,34"
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 17 Mar 2016 04:49:00 GMT
+  recorded_at: Tue, 15 Nov 2016 21:59:09 GMT
 - request:
     method: post
-    uri: https://www.googleapis.com/upload/drive/v2/files?upload_id=AEnB2UojakFb0LdF2Ss7ccGdrzI0OOX4l5PdGXb3qlAIhgPkCyzu9KqG5hLoukvH8gTN6EvogDMrCcfScJAFLmUvGJBE1eKnwg&upload_protocol=resumable
+    uri: https://www.googleapis.com/upload/drive/v2/files?upload_id=AEnB2UoPvyIC2Vp5oGXay8v_XnBc_YIi-xSLXeAPurKk-E6jb4ozCN-5xHM5Ew-NCWe-cDACo8Fu-uzIgcuj97UJXon2id_5Gw&upload_protocol=resumable
     body:
       encoding: UTF-8
       string: ''
     headers:
       User-Agent:
       - |-
-        unknown/0.0.0 google-api-ruby-client/0.9.pre3 Linux/3.19.0-51-generic
+        unknown/0.0.0 google-api-ruby-client/0.9 Linux/3.19.0-56-generic
          (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Tue, 15 Nov 2016 21:59:09 GMT
       Authorization:
-      - Bearer ya29.qAJLIBY0KnIxSU763mPUkBQPSHkLs_0Xmg9s2SxT0Yv-ExyH-8zc99YvBD5GlDuwfrI
+      - Bearer ya29.Ci-XA_FNc5dIWRAqKfmZ1vK7KWY-upRGy9ycFIhJGstwIlr21wtGWqw91akDVIh4kA
       Content-Type:
       - application/json
       X-Goog-Upload-Command:
@@ -229,21 +408,17 @@ http_interactions:
       - '0'
       Content-Length:
       - '0'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
       X-Guploader-Uploadid:
-      - AEnB2UojakFb0LdF2Ss7ccGdrzI0OOX4l5PdGXb3qlAIhgPkCyzu9KqG5hLoukvH8gTN6EvogDMrCcfScJAFLmUvGJBE1eKnwg
+      - AEnB2UoPvyIC2Vp5oGXay8v_XnBc_YIi-xSLXeAPurKk-E6jb4ozCN-5xHM5Ew-NCWe-cDACo8Fu-uzIgcuj97UJXon2id_5Gw
       X-Goog-Upload-Status:
       - final
       Etag:
-      - '"c-g_a-1OtaH-kNQ4WBoXLp3Zv9s/MTQ1ODE5MDE0MDcwOA"'
+      - '"41zBgiQeVtkERrlow_o1l3GDE3o/MTQ3OTI0NzE0OTUwMg"'
       Vary:
       - Origin
       - X-Origin
@@ -254,97 +429,18 @@ http_interactions:
       Pragma:
       - no-cache
       Expires:
-      - Fri, 01 Jan 1990 00:00:00 GMT
+      - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Thu, 17 Mar 2016 04:49:01 GMT
+      - Tue, 15 Nov 2016 21:59:09 GMT
       Content-Length:
-      - '2656'
+      - '2661'
       Server:
       - UploadServer
-      Alternate-Protocol:
-      - 443:quic,p=1
       Alt-Svc:
-      - quic=":443"; ma=2592000; v="31,30,29,28,27,26,25"
+      - quic=":443"; ma=2592000; v="36,35,34"
     body:
       encoding: UTF-8
-      string: |
-        {
-         "kind": "drive#file",
-         "id": "0B37u_eLqcexnZUx2WHhBeGhrZmc",
-         "etag": "\"c-g_a-1OtaH-kNQ4WBoXLp3Zv9s/MTQ1ODE5MDE0MDcwOA\"",
-         "selfLink": "https://www.googleapis.com/drive/v2/files/0B37u_eLqcexnZUx2WHhBeGhrZmc",
-         "webContentLink": "https://docs.google.com/uc?id=0B37u_eLqcexnZUx2WHhBeGhrZmc&export=download",
-         "alternateLink": "https://drive.google.com/file/d/0B37u_eLqcexnZUx2WHhBeGhrZmc/view?usp=drivesdk",
-         "iconLink": "https://ssl.gstatic.com/docs/doclist/images/generic_app_icon_16.png",
-         "title": "Untitled",
-         "mimeType": "application/text",
-         "labels": {
-          "starred": false,
-          "hidden": false,
-          "trashed": false,
-          "restricted": false,
-          "viewed": true
-         },
-         "createdDate": "2016-03-17T04:49:00.708Z",
-         "modifiedDate": "2016-03-17T04:49:00.708Z",
-         "modifiedByMeDate": "2016-03-17T04:49:00.708Z",
-         "lastViewedByMeDate": "2016-03-17T04:49:00.708Z",
-         "markedViewedByMeDate": "1970-01-01T00:00:00.000Z",
-         "version": "175",
-         "parents": [
-          {
-           "kind": "drive#parentReference",
-           "id": "0AH7u_eLqcexnUk9PVA",
-           "selfLink": "https://www.googleapis.com/drive/v2/files/0B37u_eLqcexnZUx2WHhBeGhrZmc/parents/0AH7u_eLqcexnUk9PVA",
-           "parentLink": "https://www.googleapis.com/drive/v2/files/0AH7u_eLqcexnUk9PVA",
-           "isRoot": true
-          }
-         ],
-         "downloadUrl": "https://doc-08-2c-docs.googleusercontent.com/docs/securesc/odi09ajak630ptsu4johj608bcao2g6p/p63krv02pm41k6f2tf1ucso3u0hmfm9p/1458187200000/13737777834403275468/13737777834403275468/0B37u_eLqcexnZUx2WHhBeGhrZmc?e=download&gd=true",
-         "userPermission": {
-          "kind": "drive#permission",
-          "etag": "\"c-g_a-1OtaH-kNQ4WBoXLp3Zv9s/w0jsT2KNZmjlpUnRPmQBRkNktUY\"",
-          "id": "me",
-          "selfLink": "https://www.googleapis.com/drive/v2/files/0B37u_eLqcexnZUx2WHhBeGhrZmc/permissions/me",
-          "role": "owner",
-          "type": "user"
-         },
-         "originalFilename": "Untitled",
-         "fileExtension": "",
-         "md5Checksum": "d41d8cd98f00b204e9800998ecf8427e",
-         "fileSize": "0",
-         "quotaBytesUsed": "0",
-         "ownerNames": [
-          "Peter Karth"
-         ],
-         "owners": [
-          {
-           "kind": "drive#user",
-           "displayName": "Peter Karth",
-           "isAuthenticatedUser": true,
-           "permissionId": "13737777834403275468",
-           "emailAddress": "peterkarth.dev.testing@gmail.com"
-          }
-         ],
-         "lastModifyingUserName": "Peter Karth",
-         "lastModifyingUser": {
-          "kind": "drive#user",
-          "displayName": "Peter Karth",
-          "isAuthenticatedUser": true,
-          "permissionId": "13737777834403275468",
-          "emailAddress": "peterkarth.dev.testing@gmail.com"
-         },
-         "editable": true,
-         "copyable": true,
-         "writersCanShare": true,
-         "shared": false,
-         "explicitlyTrashed": false,
-         "appDataContents": false,
-         "headRevisionId": "0B37u_eLqcexnMnFreEQwN0puSzJEN0tySVRPT3lKTzdlTGw4PQ",
-         "spaces": [
-          "drive"
-         ]
-        }
+      string: ''
     http_version: 
-  recorded_at: Thu, 17 Mar 2016 04:49:01 GMT
+  recorded_at: Tue, 15 Nov 2016 21:59:09 GMT
 recorded_with: VCR 2.9.3

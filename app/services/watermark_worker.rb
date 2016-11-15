@@ -19,10 +19,10 @@ class WatermarkWorker
     token =  User.find(@old_image.user.id).refresh_token
 
     @client = SignetWrapper::Client.authorize(token).response
+    @client.fetch_access_token!
 
     @old_google_id = @old_image.google_id
     @new_google_id = @new_image.google_id
-
     @metadata = service.get_file(self.old_google_id, client).response
     @folder_path = create_tmp_folder
     @text = @new_image.text

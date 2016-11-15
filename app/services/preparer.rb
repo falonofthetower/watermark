@@ -18,6 +18,6 @@ class Preparer
   end
 
   def mime_type
-    "pdf"
+    "jpg"
   end
 end

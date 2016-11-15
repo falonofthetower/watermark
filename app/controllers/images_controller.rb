@@ -1,7 +1,8 @@
 class ImagesController < ApplicationController
-  before_filter :require_google_auth_user
+  before_action :require_google_auth_user
 
   def new
+    set_access_token
     @image = Image.new
   end
 
@@ -18,15 +19,14 @@ class ImagesController < ApplicationController
   def show
     @image = Image.find(params[:id])
     @sidekiq_jobs = @image.sidekiq_jobs || []
+    set_access_token
     gon.push({
       google_id: @image.google_id
     })
 
-=begin
-    if @sidekiq_jobs
-      gon.watch.push({ job_id: @sidekiq_jobs.job_id })
-    end
-=end
+    # if @sidekiq_jobs
+    #   gon.watch.push({ job_id: @sidekiq_jobs.job_id })
+    # end
 
     respond_to do |format|
       format.html
@@ -38,5 +38,11 @@ class ImagesController < ApplicationController
 
   def image_params
     params.require(:image).permit(:google_id, :project_id)
+  end
+
+  def set_access_token
+    access_token = DriveGenerator.new(current_user.refresh_token).access_token
+    @gon_items[:access_token] = access_token
+    gon.push(@gon_items)
   end
 end

@@ -16,7 +16,7 @@ describe DriveWrapper do
           id: "fake_id",
           title: "New Title",
           parents: [{id: "dad"}, {id: "mom"}],
-          mime_type: "application/vnd.google-apps.type"
+          mime_type: nil
         )
 
         DriveWrapper::File.build(file_command)
@@ -35,7 +35,7 @@ describe DriveWrapper do
           id: "fake_id",
           title: "New Title",
           parents: [{id: "dad"}, {id: "mom"}],
-          mime_type: "application/vnd.google-apps.type"
+          mime_type: nil
         )
 
         DriveWrapper::File.build(file_command)

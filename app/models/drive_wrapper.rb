@@ -25,10 +25,10 @@ module DriveWrapper
     end
 
     def self.mime_type
-      prefix = "application/vnd.google-apps"
-      return @file.mime_type if @file.mime_type == "pdf"
-      return @file.mime_type if @file.mime_type.starts_with? prefix
-      "#{prefix}.#{@file.mime_type}"
+      # prefix = "application/vnd.google-apps"
+      # return @file.mime_type if @file.mime_type == "pdf"
+      # return @file.mime_type if @file.mime_type.starts_with? prefix
+      # "#{prefix}.#{@file.mime_type}"
     end
 
     def self.parents
