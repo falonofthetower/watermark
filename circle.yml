@@ -5,12 +5,12 @@ deployment:
   production:
     branch: master
     commands:
-      - heroku maintenance:on --app watermarker
-      - heroku pg:backups capture --app watermarker
+      - heroku maintenance:on --app wobbling-watermarker
+      - heroku pg:backups capture --app wobbling-watermarker
       - git fetch origin --unshallow
       - git push git@heroku.com:watermarker.git $CIRCLE_SHA1:refs/heads/master
-      - heroku run rake db:migrate --app watermarker
-      - heroku maintenance:off --app watermarker
+      - heroku run rake db:migrate --app wobbling-watermarker
+      - heroku maintenance:off --app wobbling-watermarker
   staging:
     branch: staging
     commands:
