@@ -1,0 +1,2 @@
+class ImagePreparer < Preparer
+end

@@ -11,7 +11,7 @@ module SignetWrapper
     def self.authorize(token)
       client.refresh_token = token
       client.grant_type = "refresh_token"
-      client.fetch_access_token
+      client.fetch_access_token!
 
       new(response: client)
     rescue Signet::AuthorizationError => e
@@ -19,15 +19,15 @@ module SignetWrapper
     end
 
     def self.client
-      @client ||= Signet::OAuth2::Client.new(client_options)
+      @client ||= fresh_client
     end
 
     def self.client_options
       {
         client_id: ENV["CLIENT_ID"],
         temporary_credential_uri: 'https://www.google.com/accounts/OAuthGetRequestToken',
-        authorization_uri: 'https://www.google.com/accounts/OAuthAuthorizeToken',
-        token_credential_uri: 'https://www.google.com/accounts/OAuthGetAccessToken',
+        # authorization_uri: 'https://www.google.com/accounts/OAuthAuthorizeToken',
+        # token_credential_uri: 'https://www.google.com/accounts/OAuthGetAccessToken',
         client_credential_key: 'anonymous',
         client_credential_secret: 'anonymous',
         authorization_uri: "https://accounts.google.com/o/oauth2/auth",
@@ -37,6 +37,10 @@ module SignetWrapper
         redirect_uri: ENV["REDIRECT_URI"],
         javascript_origins: ENV["JAVASCRIPT_ORIGINS"]
       }
+    end
+
+    def self.fresh_client
+      Signet::OAuth2::Client.new(client_options)
     end
 
     def successful?
