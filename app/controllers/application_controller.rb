@@ -7,6 +7,11 @@ class ApplicationController < ActionController::Base
     :require_google_auth,
     :return_to_previous
   )
+  before_action :prep_gon
+
+  def prep_gon
+    @gon_items = {}
+  end
 
   def current_user
     logger.debug "debug #{__method__}"

@@ -27,7 +27,5 @@ describe FileInserter do
       expect(DriveWrapper::Service).to receive(:insert_file).with("metadata", "valid client", upload_source: "cool/location", content_type: "ninja nunchucks")
       FileInserter.new.perform(special_file_command.id)
     end
-
-
   end
 end

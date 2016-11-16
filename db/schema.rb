@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106032957) do
+ActiveRecord::Schema.define(version: 20161112041901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 20161106032957) do
   end
 
   add_index "google_id_pools", ["user_id"], name: "index_google_id_pools_on_user_id", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "google_id"
+    t.string  "text"
+    t.string  "google_drive_id"
+    t.string  "title"
+  end
 
   create_table "pdfs", force: :cascade do |t|
     t.integer "user_id"
@@ -83,13 +91,5 @@ ActiveRecord::Schema.define(version: 20161106032957) do
     t.datetime "oauth_expires_at"
   end
 
-  create_table "watermarks", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "google_id"
-    t.string  "text"
-    t.string  "google_drive_id"
-    t.string  "title"
-  end
-
-  add_foreign_key "watermarks", "users"
+  add_foreign_key "images", "users"
 end

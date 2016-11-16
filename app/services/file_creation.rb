@@ -11,7 +11,7 @@ class FileCreation
     @file_command = FileCommand.create(
       file_id: @prepared.file_id,
       user_id: @prepared.user.id,
-      title: @prepared.subject.title,
+      title: @prepared.title,
       parents: @prepared.parents,
       mime_type: @prepared.mime_type,
       upload_source: options[:upload_source],

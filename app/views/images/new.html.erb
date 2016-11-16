@@ -1,0 +1,8 @@
+<%= content_for(:body_attributes) do %>data-no-turbolink<% end %>
+<button id="choose_image" class="btn btn-primary">Choose image</button>
+<%= bootstrap_form_for(Image.new) do |f| %>
+  <%= f.hidden_field :google_id %>
+  <%= f.submit "Add image", id: "add_image", style: "display: none" %>
+<% end %>
+
+<script src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>

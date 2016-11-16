@@ -11,5 +11,4 @@ function updateProgressBar(id) {
   });
   var timeoutID = setTimeout(function() { updateProgressBar(id) }, 1000)
 }
-debugger;
 updateProgressBar("<%= j @job_id %>");

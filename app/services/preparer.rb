@@ -6,7 +6,11 @@ class Preparer
   end
 
   def file_id
-    @file_id ||= user.new_drive_id
+    @file_id ||= subject.google_id
+  end
+
+  def title
+    subject.title
   end
 
   def user
@@ -14,6 +18,6 @@ class Preparer
   end
 
   def mime_type
-    "pdf"
+    "jpg"
   end
 end
