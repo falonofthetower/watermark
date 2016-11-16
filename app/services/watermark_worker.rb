@@ -61,7 +61,7 @@ class WatermarkWorker
   end
 
   def post_process
-    #`rm -rf "#{@folder_path}"`
+    `rm -rf "#{@folder_path}"`
   end
 
   def perform(id)
