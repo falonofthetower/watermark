@@ -5,7 +5,7 @@ http_interactions:
     uri: https://accounts.google.com/o/oauth2/token
     body:
       encoding: ASCII-8BIT
-      string: grant_type=refresh_token&refresh_token=<ENCODED_REFRESH_TOKEN>&client_id=<CLIENT_ID>&client_secret=<GOOGLE_CLIENT_SECRET>
+      string: grant_type=refresh_token&refresh_token=<encoderefresh>&client_id=<clientid>&client_secret=<googleclientsecret>
     headers:
       User-Agent:
       - Faraday v0.9.2
@@ -31,7 +31,7 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Tue, 15 Nov 2016 21:59:04 GMT
+      - Wed, 16 Nov 2016 03:03:57 GMT
       Content-Disposition:
       - attachment; filename="json.txt"; filename*=UTF-8''json.txt
       X-Frame-Options:
@@ -48,11 +48,11 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |-
         {
-          "access_token" : "ya29.Ci-XA0vJFq_d8YfF6Se1hstsaw96zm9bGSdwUoT42eF-dbjZ8OBJmXtk2aeC0oAj5A",
+          "access_token" : "ya29.CjCYAxA8vclKmSmUCgpLfv0jHHTOJmswTW--vweiy3r12g3MDTVYCCOmgAMN_0nzd5s",
           "expires_in" : 3600,
-          "id_token" : "eyJhbGciOiJSUzI1NiIsImtpZCI6IjcwZjhjOGMyYjA1MDIyNmIwOWI1YTQ5Zjk2MDRiMmM0MjBhM2YyM2EifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiaWF0IjoxNDc5MjQ3MTQ0LCJleHAiOjE0NzkyNTA3NDQsImF0X2hhc2giOiI5aUdNVHY3V3h6UHFJVkVLaDJ5SkFnIiwiYXVkIjoiNDk0MTAxNjIyMjE5LWwxaGRwaDdyY2ppaTJrYmxibGRtMTA3dTd0bGpubWUxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTExNDM0MDYxNzIyNTY0NDA5NTM1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjQ5NDEwMTYyMjIxOS1sMWhkcGg3cmNqaWkya2JsYmxkbTEwN3U3dGxqbm1lMS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImVtYWlsIjoicGV0ZXJrYXJ0aC5kZXYudGVzdGluZ0BnbWFpbC5jb20ifQ.l_TRvTCyiI9ucPkmD5FKBfNUyzwkB2WLcsw3PQguu1EazM9NwHHCNM8kpczclqL8eOsb46KrhMD5dwx8mrps5PzQWlQAP99aN9BigOXxM1RDf0N4YkV8zBQrf6PZjldxu6eAeabqZ8H5ven2CoTEwwVDPBSpETWx3zm6pT6l1zcVWRn7VWY6K_oTX59mZGXa1r29HfLkc-b3V3bqCT6Nb4XdD1Xg1SR3Ph5J4lTNGMessPWGOrHCak6iU4EjqHLZxwsLzmlqxyTfimA_W95kTqv-9OhFTUIVGrA4_f3N-Xj7nXxs5rTrQKu1vLijHiHe51Sq2rWePBn2Cfx_ursKLg",
+          "id_token" : "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRhOWUzZDdjZGQxYjQxNzgwMTBmODlhZjExY2ZkMzc0MDAwNjFhZmMifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiaWF0IjoxNDc5MjY1NDM3LCJleHAiOjE0NzkyNjkwMzcsImF0X2hhc2giOiJBRXJVcTIwUzZrdnFuY09RSWxYYzNRIiwiYXVkIjoiNDk0MTAxNjIyMjE5LWwxaGRwaDdyY2ppaTJrYmxibGRtMTA3dTd0bGpubWUxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTExNDM0MDYxNzIyNTY0NDA5NTM1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjQ5NDEwMTYyMjIxOS1sMWhkcGg3cmNqaWkya2JsYmxkbTEwN3U3dGxqbm1lMS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImVtYWlsIjoicGV0ZXJrYXJ0aC5kZXYudGVzdGluZ0BnbWFpbC5jb20ifQ.JLIGijmfQPm67o--_rbFxDGiue57sTXB4CDtW63MXoJod0hr-YfNiDs5ljH2YRluWqT44kLNBjmfjPSCkXF2mFeuolCKZnavRJVuIod9Lp3vVgqAYSvUaw_VECktilXeG7obYcdJM-Knqol3Lw8qD6UlpAspESlxarrEqm_tQFqTKV891rMhDLJhLIYn4-Gzf8b0mds6n5OUbvFvTuXA4gpE-QwkxjmBWMM-UMacNKYsuedLxROqeIAkQVaaVHkOaS80vJfdJRDAqxHLMeMZQgQubjRfLQ2ZdUSE5niIXLvvWg7S9l_zTk70rZq551W1PrT7iQJSbLNZnTZnM3eAGA",
           "token_type" : "Bearer"
         }
     http_version: 
-  recorded_at: Tue, 15 Nov 2016 21:59:04 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Wed, 16 Nov 2016 03:03:57 GMT
+recorded_with: VCR 3.0.3
