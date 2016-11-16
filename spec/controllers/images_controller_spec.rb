@@ -7,6 +7,7 @@ describe ImagesController do
     end
 
     it "sets @image" do
+      allow_any_instance_of(DriveGenerator).to receive(:access_token)
       set_current_google_user
       get :new
       expect(assigns(:image)).to be_instance_of(Image)

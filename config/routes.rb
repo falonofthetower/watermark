@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'images#new'
   # get 'auth/google_oauth2/callback', to: 'oauth2#redirect'
   get 'auth/google_oauth2/callback', to: 'sessions#create', as: :sign_in
-  get '/sign_out', to: 'sessions#destroy', as: 'sign_out'
+  delete '/sign_out', to: 'sessions#destroy', as: 'sign_out'
   get 'auth/failure', to: redirect('/')
   get '/auth/google_oauth2', as: 'google_oauth2'
   resources :pdfs

@@ -38,8 +38,12 @@ VCR.configure do |c|
   c.allow_http_connections_when_no_cassette = true
   c.ignore_localhost = true
   c.default_cassette_options = { record: :new_episodes }
-end
-
+  c.filter_sensitive_data("<refresh>") { ENV["GOOGLE_DRIVE_REFRESH_TOKEN"] }
+  c.filter_sensitive_data("<encoderefresh>") { ENV["ENCODED_REFRESH_TOKEN"] }
+  c.filter_sensitive_data("<googleclientid>") { ENV["GOOGLE_CLIENT_ID"] }
+  c.filter_sensitive_data("<googleclientsecret>") { ENV["GOOGLE_CLIENT_SECRET"]}
+  c.filter_sensitive_data("<clientid>") { ENV["CLIENT_ID"]}
+end 
 
 RSpec.configure do |config|
   config.before(:each) do
