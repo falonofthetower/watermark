@@ -2,7 +2,7 @@ class WatermarkWorker
   include Sidekiq::Worker
   include Sidekiq::Status::Worker
 
-  attr_reader :google_id, :client, :drive, :metadata, :folder_path, :text
+  attr_reader :old_google_id, :new_google_id, :client, :drive, :metadata, :folder_path, :text
   attr_accessor :service
 
   def expiration
@@ -13,17 +13,19 @@ class WatermarkWorker
     DriveWrapper::Service
   end
 
-  def setup(id)
-    @watermark = Watermark.find(id)
-    token =  User.find(@watermark.user.id).refresh_token
+  def setup(images)
+    @new_image = Image.find(images["new_image"])
+    @old_image = Image.find(images["old_image"])
+    token =  User.find(@old_image.user.id).refresh_token
 
     @client = SignetWrapper::Client.authorize(token).response
+    @client.fetch_access_token!
 
-    @google_id = @watermark.google_id
-
-    @metadata = service.get_file(self.google_id, client).response
+    @old_google_id = @old_image.google_id
+    @new_google_id = @new_image.google_id
+    @metadata = service.get_file(self.old_google_id, client).response
     @folder_path = create_tmp_folder
-    @text = @watermark.text
+    @text = @new_image.text
   end
 
   def create_tmp_folder
@@ -35,7 +37,7 @@ class WatermarkWorker
   end
 
   def download
-    service.get_file(google_id, client, download_dest: "#{original_file_path}")
+    service.get_file(self.old_google_id, client, download_dest: "#{original_file_path}")
   end
 
   def apply
@@ -51,15 +53,15 @@ class WatermarkWorker
   end
 
   def upload
-    @watermark.update_attributes(title: @metadata.title)
-    FileCreation.new(@watermark).create(
+    @new_image.update_attributes(title: @metadata.title)
+    FileCreation.new(@new_image).create(
       upload_source: "#{new_file_path}",
       content_type: 'image/jpeg'
     )
   end
 
   def post_process
-    #`rm -rf "#{@folder_path}"`
+    `rm -rf "#{@folder_path}"`
   end
 
   def perform(id)

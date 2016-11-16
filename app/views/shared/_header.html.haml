@@ -3,6 +3,7 @@
     %a.navbar-brand{:href => "#"} Iolite
     %ul.nav.navbar-nav.navbar-right
       - if logged_in?
-        %li= link_to "Sign Out", sign_out_path
+        %li= link_to @current_user.name, "#"
+        %li= link_to "Sign Out", sign_out_path, method: :delete
       -else
         %li= link_to "Sign In", "/auth/google_oauth2"
