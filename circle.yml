@@ -7,7 +7,6 @@ deployment:
     commands:
       - heroku maintenance:on --app wobbling-watermarker
       - heroku pg:backups capture --app wobbling-watermarker
-      - git fetch origin --unshallow
       - git push git@heroku.com:watermarker.git $CIRCLE_SHA1:refs/heads/master
       - heroku run rake db:migrate --app wobbling-watermarker
       - heroku maintenance:off --app wobbling-watermarker
