@@ -1,11 +1,11 @@
 OmniAuth.config.logger = Rails.logger
-OmniAuth.config.full_host = Rails.env.production? ? 'https://watermarker-staging.herokuapp.com' : 'http://127.0.0.1:3000'
+OmniAuth.config.full_host = ENV["DOMAIN"]
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"],
     {
       :access_type => 'offline',
-      :scope => 'email, https://www.googleapis.com/auth/drive.file, https://www.googleapis.com/auth/drive.metadata.readonly',
+      :scope => 'email, https://www.googleapis.com/auth/drive.file, https://www.googleapis.com/auth/drive.readonly',
       :prompt => 'consent'
     }
 end
