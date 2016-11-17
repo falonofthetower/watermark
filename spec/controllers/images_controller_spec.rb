@@ -13,6 +13,17 @@ describe ImagesController do
       expect(assigns(:image)).to be_instance_of(Image)
     end
   end
+
+  describe "GET show" do
+    let(:chad) { Fabricate(:user) }
+    let(:chads_image) { Fabricate(:image, user: chad) }
+
+    it "redirects other users" do
+      set_current_google_user
+      get :show, id: chads_image.id
+      expect(response).to redirect_to root_path
+    end
+  end
 end
 
 
