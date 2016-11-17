@@ -18,19 +18,24 @@ class ImagesController < ApplicationController
 
   def show
     @image = Image.find(params[:id])
-    @sidekiq_jobs = @image.sidekiq_jobs || []
-    set_access_token
-    gon.push({
-      google_id: @image.google_id
-    })
+    if @image.user == current_user
 
-    # if @sidekiq_jobs
-    #   gon.watch.push({ job_id: @sidekiq_jobs.job_id })
-    # end
+      @sidekiq_jobs = @image.sidekiq_jobs || []
+      set_access_token
+      gon.push({
+        google_id: @image.google_id
+      })
 
-    respond_to do |format|
-      format.html
-      format.js
+      # if @sidekiq_jobs
+      #   gon.watch.push({ job_id: @sidekiq_jobs.job_id })
+      # end
+
+      respond_to do |format|
+        format.html
+        format.js
+      end
+    else
+      redirect_to root_path
     end
   end
 
