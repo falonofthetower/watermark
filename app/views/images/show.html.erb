@@ -6,7 +6,8 @@
   <pre id="output"></pre>
   <%= form_tag apply_watermark_path, id: "form" do %>
     <%= hidden_field_tag :id, @image.id, id: 'id' %>
-    <%= submit_tag "Make This Image Great Again" %>
+    <%= text_field_tag :text %>
+    <%= submit_tag "Apply Watermark" %>
   <% end %>
 </div>
 

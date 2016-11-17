@@ -41,10 +41,7 @@ class WatermarkWorker
   end
 
   def apply
-    ImageManipulations::RandomStamp.new(
-      MiniMagick::Image,
-      RandomTrump
-    ).stamp(input: original_file_path, output: new_file_path)
+    `convert '#{original_file_path}' -font Arial -pointsize 20 -draw "gravity south fill black text 0,12 '#{text}' fill white text 1,11 '#{text}'" "#{new_file_path}"`
   end
 
   def original_file_path
