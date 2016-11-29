@@ -2,8 +2,8 @@
   <div id="job_id">
   </div>
 </div>
-<div id="img">
-  <pre id="output"></pre>
+<div id="img" class="container">
+  <div id="output"></div>
   <%= form_tag apply_watermark_path, id: "form" do %>
     <%= hidden_field_tag :id, @image.id, id: 'id' %>
     <%= hidden_field_tag :type, "trump"  %>
