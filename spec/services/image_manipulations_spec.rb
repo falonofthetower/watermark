@@ -16,7 +16,7 @@ describe ImageManipulations do
         expect(magick).to receive(:open).with("image_path").and_return(fake_image)
         expect(random_stamp).to receive(:resize).with("75.0x75.0").and_return(new_stamp)
         expect(fake_image).to receive(:composite).with(new_stamp).and_yield(c = double).and_return(composite = double)
-        expect(c).to receive(:gravity).with("south")
+        expect(c).to receive(:gravity)
         expect(composite).to receive(:write).with("new_path")
         ImageManipulations::RandomStamp.new(magick, randomizer).stamp(
           input: "image_path",
