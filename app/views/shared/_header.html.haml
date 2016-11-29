@@ -1,8 +1,11 @@
 %nav.navbar.navbar-default.navbar-fixed-top
   .container-fluid
     %a.navbar-brand{:href => "#"} Iolite
+    %ul.nav.navbar-nav.navbar-left
+      %li= link_to "New Image", new_image_path
     %ul.nav.navbar-nav.navbar-right
       - if logged_in?
+        %li= link_to "Sign Out", sign_out_path, method: :delete
         %li= link_to @current_user.name, "#"
         %li= link_to "Sign Out", sign_out_path, method: :delete
       -else
