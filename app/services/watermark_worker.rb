@@ -2,7 +2,7 @@ class WatermarkWorker
   include Sidekiq::Worker
   include Sidekiq::Status::Worker
 
-  attr_reader :old_google_id, :new_google_id, :client, :drive, :metadata, :folder_path, :text
+  attr_reader :old_google_id, :new_google_id, :client, :drive, :metadata, :folder_path, :text, :type
   attr_accessor :service
 
   def expiration
@@ -26,6 +26,7 @@ class WatermarkWorker
     @metadata = service.get_file(self.old_google_id, client).response
     @folder_path = create_tmp_folder
     @text = @new_image.text
+    @type = images["type"]
   end
 
   def create_tmp_folder
@@ -43,7 +44,7 @@ class WatermarkWorker
   def apply
     ImageManipulations::RandomStamp.new(
       MiniMagick::Image,
-      RandomTrump
+      RandomImage.new(type)
     ).stamp(input: original_file_path, output: new_file_path)
   end
 

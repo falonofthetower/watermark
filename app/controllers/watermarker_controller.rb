@@ -4,7 +4,7 @@ class WatermarkerController < ApplicationController
     new_id = current_user.google_id_pool.pop
 
     @new_image = Image.create(google_id: new_id, user: current_user, text: text_param[:text])
-    @job_id = WatermarkWorker.perform_async(new_image: @new_image.id, old_image: @old_image.id)
+    @job_id = WatermarkWorker.perform_async(new_image: @new_image.id, old_image: @old_image.id, type: params[:type])
 
     SidekiqJob.create(job_id: @job_id, user: current_user, driveable_id: @old_image.id, driveable_type: @old_image.class.name)
 
