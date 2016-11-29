@@ -11,8 +11,10 @@ module ImageManipulations
     def stamp(paths)
       self.image = magick.open(paths[:input])
 
+      location = [:north_west, :north, :north_east, :west, :center, :east, :south_west, :south, :south_east].sample
+
       result = self.image.composite(self.random_stamp.resize(resize_string)) do |c|
-        c.gravity "south"
+        c.gravity location
       end
       result.write paths[:output]
     end
