@@ -5,7 +5,7 @@ module ImageManipulations
 
     def initialize(magick, randomizer)
       @magick = magick
-      @random_stamp = magick.open(randomizer.new.image_path)
+      @random_stamp = magick.open(randomizer.image_path)
     end
 
     def stamp(paths)

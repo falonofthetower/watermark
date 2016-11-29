@@ -6,7 +6,14 @@
   <pre id="output"></pre>
   <%= form_tag apply_watermark_path, id: "form" do %>
     <%= hidden_field_tag :id, @image.id, id: 'id' %>
-    <%= submit_tag "Make This Image Great Again" %>
+    <%= hidden_field_tag :type, "trump"  %>
+    <%= submit_tag "Make This Image Great Again", class: "btn btn-danger" %>
+  <% end %>
+
+  <%= form_tag apply_watermark_path, id: "form" do %>
+    <%= hidden_field_tag :id, @image.id, id: 'id' %>
+    <%= hidden_field_tag :type, "unicorns"  %>
+    <%= submit_tag "Make this Image Sparkle", class: "btn btn-success" %>
   <% end %>
 </div>
 
