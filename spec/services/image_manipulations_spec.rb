@@ -11,14 +11,13 @@ describe ImageManipulations do
       let(:composite) { double }
 
       it "reduces the stamp to half the size of the image" do
-        expect(randomizer).to receive(:new).and_return(random_stamp)
         expect(magick).to receive(:open).with("fake_path").and_return(random_stamp)
         expect(magick).to receive(:open).with("image_path").and_return(fake_image)
         expect(random_stamp).to receive(:resize).with("75.0x75.0").and_return(new_stamp)
         expect(fake_image).to receive(:composite).with(new_stamp).and_yield(c = double).and_return(composite = double)
         expect(c).to receive(:gravity)
         expect(composite).to receive(:write).with("new_path")
-        ImageManipulations::RandomStamp.new(magick, randomizer).stamp(
+        ImageManipulations::RandomStamp.new(magick, random_stamp).stamp(
           input: "image_path",
           output: "new_path"
         )
